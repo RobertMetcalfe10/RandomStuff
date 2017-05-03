@@ -3,5 +3,15 @@ showTables mapsql.tables *
 insertData contact name email rem rem.email
 insertData contact name email rob rob.email
 selectTable contact *
-updateData contact email hak Equals id 2
-selectTable contact * Equals id 2
+updateData contact email hak.email GreaterThan id 1
+selectTable contact * Or Equals id 1 Equals name rob
+deleteData contact Equals id 1
+insertPartialData contact name dullah
+selectTable contact * GreaterThanOrEquals id 2
+selectTable contact * LessThan id 3
+selectTable contact * LessThanOrEquals id 3
+selectTable contact * Like name %ob%
+selectTable contact * Like name %dull
+selectTable contact * like email email%
+dropTable contact
+showTables mapsql.tables *
