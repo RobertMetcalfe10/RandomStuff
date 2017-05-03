@@ -21,26 +21,6 @@ public class ExampleTestProgram {
 	public static SQLManager manager = new SQLManager();
 	
 	public static void main(String[] args) {
-		//createTableStatement();
-
-		//showTables();
-//		insertData();
-//		//selectTable();
-//
-//		insertPartialData();
-//		//selectTable();
-//
-//		updateData();
-////		updateOrData();
-//		//selectTable();
-////
-////		deleteData();
-////		selectTable();
-////		
-//		dropTable();
-//		showTables();
-//		selectTable();
-		
 		sources();
 	}
 
@@ -129,7 +109,7 @@ public class ExampleTestProgram {
 	public static void sources()
 	{
 		try {
-			manager.execute(new Sources("test"));
+			manager.execute(new Sources("test.txt"));
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

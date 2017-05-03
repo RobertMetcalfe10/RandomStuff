@@ -21,19 +21,28 @@ public class DropTable implements SQLStatement {
 	
 	@Override
 	public SQLResult execute(Map<String, Table> tables) throws SQLException {
+		if(name.equals("mapsql.tables"))
+		{
+			throw new SQLException("Table "+name+" can't be dropped");
+		}
+		else if(tables.get(name)==null)
+		{
+			throw new SQLException("Unknown Table "+name);
+		}
+		else
+		{
+			try {
+				tables.get("mapsql.tables").delete(new Equals("table",name));
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			tables.remove(name);
+		}
 		return new SQLResult() {
+			
 			public String toString() {
-				
-				if(name.equals("mapsql.tables"))
-				{
-					return "Table "+name+" cant't be dropped!";
-				}
-				else
-				{
-					tables.remove(name);
-					return "Table "+name+" dropped!";
-				}
-				
+				return "Table "+name+" dropped";
 			}
 
 			@Override

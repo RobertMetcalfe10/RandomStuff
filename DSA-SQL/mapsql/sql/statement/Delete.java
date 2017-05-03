@@ -27,7 +27,6 @@ public class Delete implements SQLStatement {
 	@Override
 	public SQLResult execute(Map<String, Table> tables) throws SQLException {
 		if (name.equals("mapsql.tables")) throw new SQLException("Table 'mapsql.tables' cannot be modified");
-
 		final Table table = tables.get(name);
 		if (table == null) throw new SQLException("Unknown table: " + name);
 		

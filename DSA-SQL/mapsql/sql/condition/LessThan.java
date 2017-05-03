@@ -19,7 +19,7 @@ public class LessThan extends AbstractCondition {
 	@Override
 	public boolean evaluate(TableDescription description, Map<String, String> data) throws SQLException {
 		Field field = description.findField(column);
-		return comparator.compare(field.toValue(data.get(column)), field.toValue(value)) > 0;	
+		return comparator.compare(field.toValue(data.get(column)), field.toValue(value)) < 0;	
 		}
 
 }

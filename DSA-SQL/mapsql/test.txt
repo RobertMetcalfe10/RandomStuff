@@ -1,1 +1,7 @@
-rob
+createTableStatement contact INTEGER id true false true CHARACTER name 30 false true CHARACTER email 30 false false
+showTables mapsql.tables *
+insertData contact name email rem rem.email
+insertData contact name email rob rob.email
+selectTable contact *
+updateData contact email hak Equals id 2
+selectTable contact * Equals id 2
